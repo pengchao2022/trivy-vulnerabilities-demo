@@ -36,7 +36,26 @@ https://github.com/aquasecurity/trivy/releases
   ```shell
   trivy --version
   ```
-  
+  - Set environment and use github container register
+  ```shell
+  export TRIVY_DB_REPOSITORY="ghcr.io/aquasecurity/trivy-db"
+  ```
+- Use trivy to scan the dockerhub image
+```shell
+trivy image pengchaoma/springboot-todo-app:1.0.0
+2026-01-07T17:55:56+08:00       INFO    Adding schema version to the DB repository for backward compatibility   repository="ghcr.io/aquasecurity/trivy-db:2"
+2026-01-07T17:55:56+08:00       INFO    [vulndb] Need to update DB
+2026-01-07T17:55:56+08:00       INFO    [vulndb] Downloading vulnerability DB...
+2026-01-07T17:55:56+08:00       INFO    [vulndb] Downloading artifact...        repo="ghcr.io/aquasecurity/trivy-db:2"
+79.79 MiB / 79.79 MiB [---------------------------------------------------------------------------------------------------------------------------------------------] 100.00% 6.41 MiB p/s 13s
+2026-01-07T17:56:11+08:00       INFO    [vulndb] Artifact successfully downloaded       repo="ghcr.io/aquasecurity/trivy-db:2"
+2026-01-07T17:56:11+08:00       INFO    [vuln] Vulnerability scanning is enabled
+2026-01-07T17:56:11+08:00       INFO    [secret] Secret scanning is enabled
+2026-01-07T17:56:11+08:00       INFO    [secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2026-01-07T17:56:11+08:00       INFO    [secret] Please see https://trivy.dev/docs/v0.68/guide/scanner/secret#recommendation for faster secret detection
+```
+
+
 
 
 
