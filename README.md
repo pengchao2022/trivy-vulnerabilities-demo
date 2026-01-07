@@ -54,6 +54,11 @@ trivy image pengchaoma/springboot-todo-app:1.0.0
 2026-01-07T17:56:11+08:00       INFO    [secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
 2026-01-07T17:56:11+08:00       INFO    [secret] Please see https://trivy.dev/docs/v0.68/guide/scanner/secret#recommendation for faster secret detection
 ```
+- Here you can see the trivy db
+```shell
+ecs-user@iZ0jle4z93fet5386z4gwzZ:~/.cache/trivy/db$ pwd
+/home/ecs-user/.cache/trivy/db
+```
 
 
 
